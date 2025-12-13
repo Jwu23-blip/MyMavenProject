@@ -20,4 +20,18 @@ public class Department {
             this.departmentName = null;
         }
     }
+
+    public static boolean isDepartmentNameValid(String departmentName) {
+        if (departmentName == null) {
+            return false;
+        }
+
+        for (int i = 0; i < departmentName.length(); i++) {
+            char c = departmentName.charAt(i);
+            if (!(c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' || c == ' ')) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
