@@ -37,9 +37,9 @@ public class Address {
         for (int i = 0; i < 6; i++) {
             char c = postalCode.charAt(i);
             if (i % 2 == 0) {
-                if (!Character.isLetter(c)) return false;
+                if (!((c >='A' && c <= 'Z') || (c >= 'a' && c <= 'z'))) return false;
             } else {
-                if (!Character.isLetter(c)) return false;
+                if (!(c >= '0' && c <= '9')) return false;
             }
         }
         return true;
