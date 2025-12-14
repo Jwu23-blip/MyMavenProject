@@ -44,7 +44,7 @@ public class Address {
         }
         return true;
     }
-    
+
     public enum Province {
         AB, BC, MB, NB, Nl, NS, NT, NU, ON, PE, QC, SK, YT
     }
