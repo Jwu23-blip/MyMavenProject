@@ -44,11 +44,7 @@ public class Address {
         }
         return true;
     }
-
-    public enum Gender {
-        MALE, FEMALE
-    }
-
+    
     public enum Province {
         AB, BC, MB, NB, Nl, NS, NT, NU, ON, PE, QC, SK, YT
     }
