@@ -18,4 +18,19 @@ public class Student {
     private Address address;
     private Department department;
     private ArrayList<Course> registeredCourses;
+
+    public Student(Department department, Gender gender, String studentName, Address address) {
+        this.address = address;
+        this.department = department;
+        this.gender = gender;
+        this.registeredCourses = new ArrayList<>();
+        this.studentId = "S" + String.format("%06d", nextId++);
+        this.studentName = studentName;
+    }
+
+    public boolean registerCourse(Course course) {
+        if(registeredCourses.contains(course)) {
+            return false;
+        }
+    }
 }
