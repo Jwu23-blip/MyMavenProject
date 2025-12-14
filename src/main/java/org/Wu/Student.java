@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.lang.model.type.ArrayType;
 import java.util.ArrayList;
 @Setter
 @Getter
@@ -30,7 +29,7 @@ public class Student {
         this.studentName = studentName;
     }
 
-    public boolean registerCourse(Course course) {
+    public boolean registeredCourse(Course course) {
         if(registeredCourses.contains(course)) {
             return false;
         }
@@ -49,7 +48,7 @@ public class Student {
     }
 
     public String toSimplifiedString() {
-        return studentId + " - " + studentName + " - " + department.getDepartmentName();
+        return studentId + " - " + studentName + " - " + getDepartment();
     }
 
     public enum Gender {
@@ -69,8 +68,8 @@ public class Student {
     class Department {
         private String department;
 
-        public Department(String department) {
-            this.department = department;
+        public Department(String departmentName) {
+            this.department = departmentName;
         }
     }
 
