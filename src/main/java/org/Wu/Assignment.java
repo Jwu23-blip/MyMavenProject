@@ -33,7 +33,13 @@ public class Assignment {
             int n = random.nextInt(11);
             int score;
 
-            if (n == 0) score = random.nextInt(60)
+            if (n == 0) score = random.nextInt(60);
+            else if (n <= 2) score = 60 + random.nextInt(10);
+            else if (n <= 4) score = 70 + random.nextInt(10);
+            else if (n <= 8) score = 80 + random.nextInt(10);
+            else score = 90 + random.nextInt(11 );
+
+            scores.set(i, score);
         }
     }
 }
