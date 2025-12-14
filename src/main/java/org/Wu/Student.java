@@ -32,5 +32,21 @@ public class Student {
         if(registeredCourses.contains(course)) {
             return false;
         }
+        registeredCourses.add(course);
+        course.registerStudent(this);
+        return true;
+    }
+
+    public boolean dropCourse(Course course) {
+        if (!registeredCourses.contains(course)) {
+            return false;
+        }
+        registeredCourses.remove(course);
+        course.getRegisteredStudents().remove(this);
+        return true;
+    }
+
+    public String toSimplifiedString() {
+        return studentId + " - " + studentName + " - " + department.getDepartmentName();
     }
 }
