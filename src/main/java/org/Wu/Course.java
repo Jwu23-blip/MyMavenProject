@@ -28,4 +28,30 @@ public class Course {
         this.department = department;
         this.registeredStudents = new ArrayList<>();
     }
+
+    public boolean registerStudents(Student student) {
+        if (registeredStudents.contains(student)) {
+            return false;
+        }
+        registeredStudents.add(student);
+        for (Assignment a : assignments) {
+            a.getScores().add(null);
+        }
+        return true;
+    }
+
+    public void addAssignment(Assignment assignment) {
+        assignments.add(assignment);
+        for (Student s : registeredStudents) {
+            assignment.getScores().add(null);
+        }
+    }
+
+    public boolean isAssignmentWeightValid() {
+        double sum = 0;
+        for (Assignment a : assignments) {
+            sum += a.getWeight();
+        }
+        return sum == 100;
+    }
 }
